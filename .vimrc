@@ -21,7 +21,8 @@ nnoremap ` '
 set backupdir=./.backup,/tmp
 set directory=.,./.backup,/tmp
 
-"Basic configuration
+" Basic configuration
+set nocompatible
 set wildmenu      " Provide <tab> completion lists
 set wildmode=list:longest
                   " Make <tab> completed lists shell-like
