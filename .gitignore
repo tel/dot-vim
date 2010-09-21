@@ -1,0 +1,8 @@
+*.swp
+vendor/pathogen
+bundle/taglist
+bundle/NERDcommenter
+vendor/sparkup
+bundle/surround
+bundle/repeat
+bundle/fugitive

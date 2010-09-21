@@ -4,3 +4,18 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = http://github.com/bronson/vim-taglist.git
+[submodule "bundle/NERDcommenter"]
+	path = bundle/NERDcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "vendor/sparkup"]
+	path = vendor/sparkup
+	url = http://github.com/rstacruz/sparkup.git
+[submodule "bundle/surround"]
+	path = bundle/surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule "bundle/repeat"]
+	path = bundle/repeat
+	url = http://github.com/tpope/vim-repeat.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
