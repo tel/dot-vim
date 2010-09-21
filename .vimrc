@@ -111,7 +111,12 @@ set shortmess=atI        " Shorten a lot of system messages
 "set relativenumber       " show motion numbers
 "set undofile             " create persistent undos
 
-"Enable filetype stuff
+" Custom bundle configurations
+set ruler
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2
+
+" Enable filetype stuff
 syntax on 
 filetype on
 filetype plugin on
