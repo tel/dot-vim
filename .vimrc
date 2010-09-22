@@ -118,6 +118,7 @@ set laststatus=2
 
 " Haskell Mode
 au Bufenter *.hs compiler ghc
+let g:haddock_browser = "open"
 
 " Enable filetype stuff
 syntax on 
