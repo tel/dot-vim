@@ -116,6 +116,9 @@ set ruler
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
 
+" Haskell Mode
+au Bufenter *.hs compiler ghc
+
 " Enable filetype stuff
 syntax on 
 filetype on
