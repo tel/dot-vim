@@ -107,7 +107,8 @@ set title                " change the terminal's title
 set visualbell           " don't beep
 set noerrorbells         " don't beep
 set shortmess=atI        " Shorten a lot of system messages
-			
+set grepprg=grep\ -nH\ $* " Make grep behave nicely for LaTeX
+
 "set relativenumber       " show motion numbers
 "set undofile             " create persistent undos
 
@@ -125,6 +126,8 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+let g:tex_flavor='latex'
+
 
 if has('autocmd')
 	autocmd filetype python set expandtab
