@@ -26,15 +26,15 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+" Insert newlines with enter and shift + enter
+map <S-Enter> O<ESC>
+map <Enter> o<ESC>
 
 " Some <leader> commands
 " 1) Easy use of Ack
@@ -52,6 +52,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" spellcheck
+map <silent> <leader>s :set spell!<CR>
+set nospell
 
 " Back to normal shortcut
 inoremap jj <ESC>
@@ -61,6 +64,7 @@ au FocusLost * :wa
 
 " Basic configuration
 set nocompatible
+map Y y$
 set wildmenu      " Provide <tab> completion lists
 set wildmode=list:longest
                   " Make <tab> completed lists shell-like
@@ -73,6 +77,8 @@ set ruler         " show current line/column/percentage
 set copyindent    " copy the previous indentation on autoindenting
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
+set cursorline    " Highlight the cursor's line
+set pastetoggle=<F2> "Easy pastemode swapping
 
 " Sane searches with perl/py regex format
 nnoremap / /\v
@@ -117,9 +123,90 @@ set ruler
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 set laststatus=2
 
+" Whitespace
+" Call the strip trailing whitespace function as a command
+command! StripTrailingWhitespaces call s:StripTrailingWhitespaces()
+
+" A function to strip trailing whitespace and clean up afterwards so
+" that the search history remains intact and cursor does not move.
+" Taken from: http://vimcasts.org/episodes/tidying-whitespace
+function! s:StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+map <leader>w :StripTrailingWhitespaces<CR>
+
+
 " Haskell Mode
 au Bufenter *.hs compiler ghc
 let g:haddock_browser = "open"
+
+" NERDTree
+" NERDTree                                                     {{{2
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" set project folder to x
+map <leader>x :NERDTreeToggle<CR>
+map <leader>b :NERDTreeFromBookmark<Space>
+nnoremap <silent> <leader>f :NERDTreeFind<CR>
+" files/dirs to ignore in NERDTree (mostly the same as my svn ignores)
+let NERDTreeIgnore=[
+    \'\~$',
+    \'\.pt.cache$',
+    \'\.Python$',
+    \'\.svn$',
+    \'\.git*$',
+    \'\.pyc$',
+    \'\.pyo$',
+    \'\.mo$',
+    \'\.o$',
+    \'\.lo$',
+    \'\.la$',
+    \'\..*.rej$',
+    \'\.rej$',
+    \'\.\~lock.*#$',
+    \'\.AppleDouble$',
+    \'\.DS_Store$']
+" set the sort order to alphabetical
+let NERDTreeSortOrder=[]
+" when the root is changed, change Vim's working dir
+let NERDTreeChDirMode=2
+
+" Fuzzy Finder
+" Fuzzy Finder                                                 {{{2
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+" max results, lot o' files in a buildout :)
+let g:fuzzy_ceiling=35000
+" show full paths
+let g:fuzzy_path_display = 'highlighted_path'
+" ignored files
+let g:fuzzy_ignore = "*.png;*.PNG;*.pyc;*.pyo;*.JPG;*.jpg;*.GIF;*.gif;.svn/**;.git/**;*.mo;.DS_Store;.AppleDouble"
+" available modes
+let g:FuzzyFinderOptions = {
+    \'File': {'mode_available': 1},
+    \'Buffer': {'mode_available': 0},
+    \'Dir': {'mode_available': 0},
+    \'MruFile': {'mode_available': 0},
+    \'MruCmd': {'mode_available': 0},
+    \'Bookmark': {'mode_available': 0},
+    \}
+" Don't delete a full path when using backspace in file mode
+let g:FuzzyFinderOptions.File.smart_bs = 0
+
+" Shortcuts for opening fuzzy finder
+nmap ,ff :FufFile<Space>**/
+nmap ,t :FufFile<Space>**/
+nmap ,ft :FufTag<Space>
+
 
 " Enable filetype stuff
 syntax on 
