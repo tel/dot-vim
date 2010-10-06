@@ -79,6 +79,7 @@ set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set cursorline    " Highlight the cursor's line
 set pastetoggle=<F2> "Easy pastemode swapping
+set winaltkeys=no " stop allowing alt to access the menu
 
 " Sane searches with perl/py regex format
 nnoremap / /\v
@@ -148,6 +149,7 @@ map <leader>w :StripTrailingWhitespaces<CR>
 " Haskell Mode
 au Bufenter *.hs compiler ghc
 let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
 
 " NERDTree
 " NERDTree                                                     {{{2
