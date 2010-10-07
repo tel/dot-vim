@@ -77,7 +77,6 @@ set ruler         " show current line/column/percentage
 set copyindent    " copy the previous indentation on autoindenting
 set shiftwidth=4  " number of spaces to use for autoindenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
-set cursorline    " Highlight the cursor's line
 set pastetoggle=<F2> "Easy pastemode swapping
 set winaltkeys=no " stop allowing alt to access the menu
 
@@ -183,8 +182,6 @@ let NERDTreeSortOrder=[]
 let NERDTreeChDirMode=2
 
 " Fuzzy Finder
-" Fuzzy Finder                                                 {{{2
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " max results, lot o' files in a buildout :)
 let g:fuzzy_ceiling=35000
