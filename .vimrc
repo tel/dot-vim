@@ -31,6 +31,8 @@ nnoremap k gk
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
 
 " Insert newlines with enter and shift + enter
 map <S-Enter> O<ESC>
@@ -151,8 +153,6 @@ let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
 " NERDTree
-" NERDTree                                                     {{{2
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 " set project folder to x
 map <leader>x :NERDTreeToggle<CR>
