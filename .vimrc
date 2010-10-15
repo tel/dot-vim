@@ -152,34 +152,14 @@ au Bufenter *.hs compiler ghc
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
 
-" NERDTree
+
+
+" Explore
 
 " set project folder to x
-map <leader>x :NERDTreeToggle<CR>
-map <leader>b :NERDTreeFromBookmark<Space>
-nnoremap <silent> <leader>f :NERDTreeFind<CR>
-" files/dirs to ignore in NERDTree (mostly the same as my svn ignores)
-let NERDTreeIgnore=[
-    \'\~$',
-    \'\.pt.cache$',
-    \'\.Python$',
-    \'\.svn$',
-    \'\.git*$',
-    \'\.pyc$',
-    \'\.pyo$',
-    \'\.mo$',
-    \'\.o$',
-    \'\.lo$',
-    \'\.la$',
-    \'\..*.rej$',
-    \'\.rej$',
-    \'\.\~lock.*#$',
-    \'\.AppleDouble$',
-    \'\.DS_Store$']
-" set the sort order to alphabetical
-let NERDTreeSortOrder=[]
-" when the root is changed, change Vim's working dir
-let NERDTreeChDirMode=2
+noremap <leader>x :Explore<CR>
+
+
 
 " Fuzzy Finder
 
