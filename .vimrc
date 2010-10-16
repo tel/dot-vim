@@ -34,10 +34,6 @@ vnoremap <F1> <ESC>
 cnoremap <C-A> <Home>
 cnoremap <C-E> <End>
 
-" Insert newlines with enter and shift + enter
-map <S-Enter> O<ESC>
-map <Enter> o<ESC>
-
 " Some <leader> commands
 " 1) Easy use of Ack
 " 2) Quickly refill text with ,q, "M-q" style
@@ -154,11 +150,36 @@ let g:haddock_browser_callformat = "%s %s"
 
 
 
-" Explore
+" NERDTree
 
-" set project folder to x
-noremap <leader>x :Explore<CR>
-
+map <leader>x :NERDTreeToggle<CR>
+map <leader>b :NERDTreeFromBookmark<Space>
+nnoremap <silent> <leader>f :NERDTreeFind<CR>
+" files/dirs to ignore in NERDTree (mostly the same as my svn ignores)
+let NERDTreeIgnore=[
+    \'\~$',
+    \'\.pt.cache$',
+    \'\.Python$',
+    \'\.svn$',
+    \'\.git*$',
+    \'\.pyc$',
+    \'\.pyo$',
+    \'\.mo$',
+    \'\.o$',
+    \'\.lo$',
+    \'\.la$',
+	\'\.aux$',
+	\'\.log$',
+	\'\.bbl$',
+    \'\..*.rej$',
+    \'\.rej$',
+    \'\.\~lock.*#$',
+    \'\.AppleDouble$',
+    \'\.DS_Store$']
+" set the sort order to alphabetical
+let NERDTreeSortOrder=[]
+" when the root is changed, change Vim's working dir
+let NERDTreeChDirMode=2
 
 
 " Fuzzy Finder
@@ -182,10 +203,15 @@ let g:FuzzyFinderOptions = {
 let g:FuzzyFinderOptions.File.smart_bs = 0
 
 " Shortcuts for opening fuzzy finder
-nmap ,ff :FufFile<Space>**/
-nmap ,t :FufFile<Space>**/
-nmap ,ft :FufTag<Space>
+nmap <leader>ff :FufFile<Space>../**/
+nmap <leader>ft :FufTag<Space>
 
+
+" TagList
+nnoremap <leader>tt :Tlist<CR>
+nnoremap <leader>ta :TlistAddFilesRecursive 
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Close_On_Select = 1
 
 " Enable filetype stuff
 syntax on 
