@@ -2,7 +2,14 @@ set sw=2
 set iskeyword+=:
 set tw=79
 
-let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels;e:entries;p:pageref;c:command;r:ref;t:todo'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats = 'pdf'
+let g:Tex_ViewRule_pdf = 'evince '
+let g:Tex_CompileRule_pdf = 'pdflatex -interaction=nonstopmode $*'
+"let g:Tex_ViewRule_pdf = 'open'
+let g:TreatMacViewerAsUNIX = 1
+
+let tlist_tex_settings   = 'latex;s:sections;g:graphics;l:labels;e:entries;p:pageref;c:command;r:ref'
 let tlist_make_settings  = 'make;m:makros;t:targets'
 
 call IMAP('DMA', '\datemark{<++>}<++>', 'tex')
