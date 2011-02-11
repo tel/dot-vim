@@ -54,6 +54,9 @@ nnoremap <C-l> <C-w>l
 map <silent> <leader>s :set spell!<CR>
 set nospell
 
+" Insert linebreak
+nnoremap K mqi<CR><ESC>'q
+
 " Back to normal shortcut
 inoremap jj <ESC>
 
@@ -79,8 +82,6 @@ set pastetoggle=<F2> "Easy pastemode swapping
 set winaltkeys=no " stop allowing alt to access the menu
 
 " Sane searches with perl/py regex format
-nnoremap / /\v
-vnoremap / /\v
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
@@ -208,8 +209,8 @@ nmap <leader>ft :FufTag<Space>
 
 
 " TagList
-nnoremap <leader>tt :Tlist<CR>
-nnoremap <leader>ta :TlistAddFilesRecursive 
+nnoremap <leader>lt :Tlist<CR>
+nnoremap <leader>la :TlistAddFilesRecursive 
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select = 1
 
