@@ -226,11 +226,7 @@ if has('autocmd')
 	autocmd filetype python set expandtab
 endif
 
-if &t_Co >= 16 || has("gui_running")
-   colorscheme wombat 
-endif
-
-if &t_Co > 2 || has("gui_running")
-   " switch syntax highlighting on, when the terminal has colors
-   syntax on
-endif
+" Solarized colorscheme
+syntax enable
+set background=dark
+colorscheme solarized
