@@ -226,7 +226,5 @@ if has('autocmd')
 	autocmd filetype python set expandtab
 endif
 
-" Solarized colorscheme
 syntax enable
-set background=dark
-colorscheme solarized
+colorscheme dusk
