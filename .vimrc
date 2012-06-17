@@ -207,6 +207,11 @@ let g:FuzzyFinderOptions.File.smart_bs = 0
 nmap <leader>ff :FufFile<Space>../**/
 nmap <leader>ft :FufTag<Space>
 
+" VimClojure interactivity
+"let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = "/Users/tel/bin/ng"
+let vimclojure#FuzzyIndent = 1
+let vimclojure#SplitPos = "right"
 
 " TagList
 nnoremap <leader>lt :Tlist<CR>
