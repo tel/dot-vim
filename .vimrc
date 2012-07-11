@@ -228,10 +228,9 @@ filetype plugin on
 filetype indent on
 let g:tex_flavor='latex'
 
-
-if has('autocmd')
-	autocmd filetype python set expandtab
-endif
+set expandtab
+set shiftwidth=2
+set softtabstop=2
 
 syntax enable
 colorscheme dusk

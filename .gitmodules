@@ -52,3 +52,6 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "bundle/vimerl"]
+	path = bundle/vimerl
+	url = https://github.com/tel/vimerl.git
