@@ -40,6 +40,15 @@
 [submodule "bundle/julia-vim"]
 	path = bundle/julia-vim
 	url = https://github.com/JuliaLang/julia-vim.git
-[submodule "bundle/vimerl"]
-	path = bundle/vimerl
-	url = https://github.com/jimenezrick/vimerl.git
+[submodule "bundle/gist-vim"]
+	path = bundle/gist-vim
+	url = https://github.com/mattn/gist-vim.git
+[submodule "bundle/vim-space"]
+	path = bundle/vim-space
+	url = https://github.com/spiiph/vim-space.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

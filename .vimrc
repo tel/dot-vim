@@ -74,6 +74,7 @@ set tabstop=4     " a tab is four spaces
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
+filetype indent on
 set ruler         " show current line/column/percentage
 set copyindent    " copy the previous indentation on autoindenting
 set shiftwidth=4  " number of spaces to use for autoindenting
@@ -82,6 +83,7 @@ set pastetoggle=<F2> "Easy pastemode swapping
 set winaltkeys=no " stop allowing alt to access the menu
 
 " Sane searches with perl/py regex format
+" 
 set showmatch     " set show matching parenthesis
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
