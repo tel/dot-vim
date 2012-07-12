@@ -12,11 +12,6 @@ nmap <silent> <Leader>sv :so $MYVIMRC<CR>
 " Effective buffer management
 set hidden
 
-" Convenience remappings
-nnoremap ; :
-nnoremap ' `
-nnoremap ` '
-
 " Create more useful backup/swap files
 set backupdir=./.backup,/tmp
 set directory=.,./.backup,/tmp
@@ -167,6 +162,15 @@ let g:tex_flavor='latex'
 set expandtab
 set shiftwidth=2
 set softtabstop=2
+
+" Convenience remappings
+nnoremap ; :
+nnoremap ' `
+nnoremap ` '
+
+if has("gui_running")
+    set guioptions=egmrt
+endif
 
 syntax enable
 colorscheme dusk

@@ -52,3 +52,12 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = https://github.com/wincent/Command-T.git
+[submodule "bundle/vim-gitignore"]
+	path = bundle/vim-gitignore
+	url = git@github.com:tel/vim-gitignore.git
+[submodule "bundle/AsyncCommand"]
+	path = bundle/AsyncCommand
+	url = https://github.com/pydave/AsyncCommand.git
+[submodule "bundle/vimacs"]
+	path = bundle/vimacs
+	url = https://github.com/andrep/vimacs.git
